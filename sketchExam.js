@@ -1,5 +1,4 @@
 let p
-let socket
 
 let dx
 let dy
@@ -33,17 +32,6 @@ function rectangle(){
 function setup() {	
 	let canvas = createCanvas(windowWidth, windowHeight);
 	canvas.parent("canvas");
-	socket = io.connect('http://192.168.1.68:8080');
-	socket.emit('previo',true)
-	socket.on('dibujon',function(dibujos){
-		
-		Array.prototype.push.apply(fig,dibujos)
-	});
-
-	socket.on('datos',function(data){
-		
-		Array.prototype.push.apply(fig,data)
-	});	
 }
 
 function circulo(r1, r2, xc, yc) {
@@ -184,7 +172,6 @@ function mouseReleased(){
 	yf=mouseY
 	fig[cont]=[]
 	fig[cont].push(xi,yi,xf,yf,type,color)
-	socket.emit('dibujo',fig);
 	cont++;
 	state=1
 }
