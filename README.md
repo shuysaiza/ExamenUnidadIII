@@ -1,3 +1,3 @@
-# Aplicaion Tipo Pizarron
+# Aplicación Tipo Pizarrón
 
 Jesus Manuel Saiza Ayala
